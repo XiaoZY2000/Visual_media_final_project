@@ -1,1 +1,32 @@
-This code is an 
+This code is an implementation of the model proposed by the following paper: 
+
+Huang Z, Li Y. Interpretable and accurate fine-grained recognition via region grouping[C]//Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2020: 8662-8672.
+
+which is accepted by CVPR in 2020.
+
+The technical cores this paper proposed:
+1. Region-based Part Discovery: 
+  The core innovation lies in the integration of region-based part discovery and attribution within a deep neural network. The model groups pixels into visually coherent regions and selects discriminative segments for      recognition using convolutional network features.
+
+2. Prior Knowledge Incorporation: 
+  The model incorporates a simple prior about the occurrence of object parts to facilitate learning without explicit supervision. This prior follows a U-shaped distribution indicating that some parts (like the head of a bird) appear more frequently than others (like legs).
+
+3. Attention Mechanism: 
+  The model uses an attention mechanism to weigh the importance of different regions, which enhances its ability to focus on the most relevant parts of the image for classification.
+
+4. Regularization Technique: 
+  A novel regularization term is introduced to enforce the U-shaped prior during training, which helps in discovering meaningful object parts even without direct part annotations.
+
+Reasons for acceptance:
+1. Novelty: The approach of combining region-based part discovery with a U-shaped prior for part occurrence is novel and offers a new perspective on interpretable deep learning for fine-grained classification.
+
+2. Comprehensive Evaluation: The paper provides extensive experiments and evaluations on multiple datasets, demonstrating the model's effectiveness in both accuracy and interpretability. This thorough validation adds credibility to the proposed method.
+
+3. Strong Results: The model achieves state-of-the-art or competitive results on several benchmarks for fine-grained recognition, demonstrating its practical utility and robustness.
+
+4. Visualization and Explanation: The ability to visualize part assignments and attention maps provides clear explanations for the model's decisions, addressing the critical need for transparency in deep learning models.
+
+5. Broader Impact: By improving both accuracy and interpretability, the proposed model has the potential to impact various applications in computer vision where understanding the decision process is crucial, such as in medical imaging, autonomous driving, and surveillance.
+
+What I have implemented?
+I have used the idea(mainly the region-based part discovery and the attention mechanism) this paper proposed to train a model to do a image classification task on CIFAR-10 dataset.
